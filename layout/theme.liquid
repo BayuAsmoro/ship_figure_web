@@ -266,6 +266,9 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    {{ bootstrap.min.css | asset_url |  stylesheet_tag }} 
+
+    
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -334,5 +337,7 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    {{ bootstrap.min.js | asset_url |  script_tag }} 
+
   </body>
 </html>
